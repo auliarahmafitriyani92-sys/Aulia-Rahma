@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form Pendaftaran Mahasiswa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1> Form Pendaftaran Mahasiswa</h1>
+
+        <div id="form-container">
+            <form id="formMahasiswa" novalidate>
+                
+                <div class="form-group">
+                    <label for="nim">NIM (Nomor Induk Mahasiswa):</label>
+                    <input type="text" id="nim" name="nim">
+                    <div class="error-container" id="error-nim"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama">
+                    <div class="error-container" id="error-nama"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <div class="error-container" id="error-email"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hp">Nomor HP:</label>
+                    <input type="text" id="hp" name="hp">
+                    <div class="error-container" id="error-hp"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin:</label>
+                    <div class="radio-button">
+                        <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+                        <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                    </div>
+                    <div class="error-container" id="error-gender"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="prodi">Program Studi:</label>
+                    <select id="prodi" name="prodi">
+                        <option value="">Pilih Program Studi</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+                        <option value="Manajemen administrasi">Manajemen administrasi</option>
+                        <option value="Hukum">Hukum</option>
+                        <option value="Teknik pertambangan">Teknik pertambangan</option>
+                    </select>
+                    <div class="error-container" id="error-prodi"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat:</label>
+                    <textarea id="alamat" name="alamat" rows="3"></textarea>
+                    <div class="error-container" id="error-alamat"></div>
+                </div>
+                
+                <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+                    <label>Unggah Pasfoto (Maks 2MB):</label>
+                    <div style="display: flex; gap: 20px; align-items: center; margin-top: 5px;">
+                        <div style="flex: 1;">
+                            <input type="file" id="foto" name="foto" accept=".jpg, .jpeg, .png" style="display: none;">
+                            <button type="button" id="btn-pilih-foto" style="padding: 12px 20px; background-color: #34495e; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%;">Upload Foto</button>
+                            <div class="error-container" id="error-foto"></div>
+                        </div>
+                        
+                        <div style="border: 1px solid #ccc; width: 120px; height: 150px; display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: #fdfdfd; border-radius: 6px;">
+                            <img id="preview" src="#" alt="Preview" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+                            <span id="placeholder-text" style="color: #888; font-size: 12px; font-weight: bold;">Preview Foto</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <button type="submit" id="btn-submit">Daftar Sekarang</button>
+                    <button type="reset" id="btn-reset">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="box-summary" style="display: none;">
+            <h3>Pendaftaran Berhasil!</h3>
+            <div class="card-content">
+                <div class="card-photo">
+                    <img id="card-img" src="#" alt="Foto Mahasiswa">
+                </div>
+                <div class="card-details">
+                    <p><strong>NIM:</strong> <span id="tampil-nim"></span></p>
+                    <p><strong>Nama:</strong> <span id="tampil-nama"></span></p>
+                    <p><strong>Email:</strong> <span id="tampil-email"></span></p>
+                    <p><strong>HP:</strong> <span id="tampil-hp"></span></p>
+                    <p><strong>Gender:</strong> <span id="tampil-gender"></span></p>
+                    <p><strong>Prodi:</strong> <span id="tampil-prodi"></span></p>
+                    <p><strong>Alamat:</strong> <span id="tampil-alamat"></span></p>
+                </div>
+            </div>
+            <button type="button" id="btn-edit" style="width: 100%; margin-top: 15px; padding: 10px;">Edit Data</button>
+        </div>
+        <p id="status">Status: Menunggu Interaksi User</p>
+    </div>
+
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
